@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+        <meta charset=utf-8 />
+        <script type="text/javascript" src="js/index.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css"></link>
+        <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+        <script type="text/javascript" src='js/html2canvas.min.js'></script>
+    </head>
+
+    <body>
+        <div class="left-container">
+            <div class="title">
+                <h3>    
+                    Framing
+                </h3>    
+            </div>
+            <div class="frameInches">
+                <label style="cursor: pointer;" onclick="openFramePopup()">Load Frames</label>    
+            </div>
+
+            <div class="inchesPerFrame">
+                <div class="frameImages"></div>
+            </div>
+            <div class="frameBackground">
+                <div class="mounts">
+                    <img src="image/selectmountimage.jpg" onclick="openMountPopup()" class="mount-mash"/>
+                    <div class="selectedMountContainer"><img class="selectedMount"></img></div>
+                </div>
+            </div>
+  
+            <div class="generate" onclick="generateFrame()"> Generate </div>
+        </div>
+        <div class ="right-container">
+            <div class="choose_file">
+                <span>Choose Image</span>
+                <input name="Select File" type="file" id="imgInp" onchange="readURL(this)" /> 
+            </div> 
+            <div class="uploaded_image">
+                <div id='actual-frame-container'>
+                    <div class="background-image">
+                        <img id="img"/>  
+                        <div class="topFrame"></div>
+                        <div class="bottomFrame"></div>
+                        <div class="leftFrame"></div>
+                        <div class="rightFrame"></div>
+                    </div>
+                </div>
+                
+
+                <span id="close_image" onclick="removeImage()"> 
+                    <img id="close_icon" src="image/close.png"></img>
+                </span>    
+            </div>    
+        </div>
+        <div id="mountPopup">
+            <div class="mount-images"></div>
+        </div>
+        <img src="image/close.png" class="close-mount" onclick="closeMount()"></img>
+        <div id="framePopup">
+            <div class="frame-images"></div>
+        </div>
+        <img src="image/close.png" class="close-frame" onclick="closeFrame()"></img>
+    </body>
+</html>
